@@ -14,7 +14,7 @@ User Story: As a healthcare practitioner (i.e. nurse, PA, doctor), I see multipl
 ![signUp](https://user-images.githubusercontent.com/87666809/148591129-1c9c4ad8-1c87-4d06-aab4-0d7e2844c970.PNG)
 ![addPatient](https://user-images.githubusercontent.com/87666809/148592050-3a696481-c208-48fd-ba5e-ad3d9593d1c5.PNG)
 ![list](https://user-images.githubusercontent.com/87666809/148592132-8ee226ae-ac80-4715-be3f-a5aa2988e751.PNG)
-Future PLans is under construction, but we planned to make the website better by adding a symptoom checker and for the patient to be able to send any new symptoms to the provider via message.
+Future Plans to make this website better is under construction, but we planned to make the website better by adding a symptoom checker and for the patient to be able to send any new symptoms to the provider via message.
 ![futurePlans](https://user-images.githubusercontent.com/87666809/148592262-13965305-64d4-46c1-b0b5-803e8ecea496.PNG)
 
 
