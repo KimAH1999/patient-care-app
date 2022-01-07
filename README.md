@@ -12,6 +12,7 @@ User Story: As a healthcare practitioner (i.e. nurse, PA, doctor), I see multipl
 
 ![login](https://user-images.githubusercontent.com/87666809/148590956-99dbae9a-56e1-4b1c-968a-670aae6600a0.PNG)
 ![signUp](https://user-images.githubusercontent.com/87666809/148591129-1c9c4ad8-1c87-4d06-aab4-0d7e2844c970.PNG)
+![addPatient](https://user-images.githubusercontent.com/87666809/148591374-b54accd2-de7f-405d-933c-fd0ce375b8aa.PNG)
 
 
 ## Credits
