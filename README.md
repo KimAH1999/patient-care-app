@@ -11,6 +11,7 @@ Link to deployed application: https://patient-care-app.herokuapp.com/login
 User Story: As a healthcare practitioner (i.e. nurse, PA, doctor), I see multiple patients on a day-to-day basis. This means I have numerous patient charts to keep track of. I want an application that allows me to store patient data and retrieve the information based on the name and ID of the patient that I am seeing on a given day.
 
 ![login](https://user-images.githubusercontent.com/87666809/148590956-99dbae9a-56e1-4b1c-968a-670aae6600a0.PNG)
+![signUp](https://user-images.githubusercontent.com/87666809/148591129-1c9c4ad8-1c87-4d06-aab4-0d7e2844c970.PNG)
 
 
 ## Credits
