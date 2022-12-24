@@ -1,5 +1,5 @@
 // baseline model, will have Doctor, PA, NP, Nurse sub-groups
-const {Model, DataTypes} = require('sequelize');
+/*const {Model, DataTypes} = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 const { model } = require('../config/connection');
@@ -39,4 +39,4 @@ User.init(
     }
 );
 
-model.exports = User;
+model.exports = User;*/
