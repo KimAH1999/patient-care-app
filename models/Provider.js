@@ -1,4 +1,7 @@
 // baseline model, will have Doctor, PA, NP, Nurse sub-groups
+
+//NOTE::This section is commented off for time being to continue test runs on other sections for now.
+
 /*const {Model, DataTypes} = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
