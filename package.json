@@ -1,43 +1,17 @@
 {
-  "name": "crowd-funding",
+  "name": "patient-careapp",
   "version": "1.0.0",
   "description": "We built this application as a team project. In the process of building this application, we learned a lot about working together and how to propertly plan for deadline. This project that we planned together from scratch has been very helpful.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "seed": "node seeds/index.js"
+    "test": "app"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^5.0.0",
-    "connect-session-sequelize": "^7.0.4",
-    "dotenv": "^8.2.0",
+    "connect-session-sequelize": "^7.1.5",
     "express": "^4.18.2",
-    "express-handlebars": "^5.2.0",
-    "express-session": "^1.17.1",
-    "mysql2": "^2.2.5",
-    "nodemon": "^2.0.15",
-    "sequelize": "^6.3.5"
-  },
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "prettier": "^2.1.2"
-  },
-  "engines": {
-    "node": "0.8.19",
-    "npm": "1.1.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KimAH1999/patient-care-app.git"
-  },
-  "bugs": {
-    "url": "https://github.com/KimAH1999/patient-care-app/issues"
-  },
-  "homepage": "https://github.com/KimAH1999/patient-care-app#readme"
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3"
+  }
 }

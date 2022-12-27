@@ -1,4 +1,4 @@
-const Patient = require('./Patient');
+/*const Patient = require('./Patient');
 const Provider = require('./Provider');
 
 Provider.hasMany(Patient, {
@@ -9,4 +9,4 @@ Patient.belongsTo(Provider, {
     foreignKey: 'provider_id',
 });
 
-module.exports = { Provider, Patient };
+module.exports = { Provider, Patient };*/
