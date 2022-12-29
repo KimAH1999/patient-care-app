@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const seedPatient = require('./patientData');
+const seedPatient = require('./PatientData');
 const seedProvider = require('./providerData');
 
 const seedAll = async () => {

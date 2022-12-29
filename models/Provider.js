@@ -1,19 +1,33 @@
 // baseline model, will have Doctor, PA, NP, Nurse sub-groups
 
-const {Model, DataTypes} = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Provider extends Model {
-   // checkPassword(loginPw) {
-        //return bcrypt.compareSync(loginPw, this.password);
+    // checkPassword(loginPw) {
+    //return bcrypt.compareSync(loginPw, this.password);
     //}
 }
 
 Provider.init(
     {
-        Providername: {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        provider_name: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        email: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                isEmail: true,
+            },
         },
         password: {
             type: DataTypes.STRING,
@@ -25,7 +39,7 @@ Provider.init(
     },
     {
         hooks: {
-            beforeCreate: async(newProviderData) => {
+            beforeCreate: async (newProviderData) => {
                 newProviderData.password = await bcrypt.hash(newProviderData.password, 10);
                 return newProviderData;
             },
@@ -38,4 +52,4 @@ Provider.init(
     }
 );
 
-model.exports = Provider;
+module.exports = Provider;
