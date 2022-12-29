@@ -1,21 +1,17 @@
 // baseline model, will have Doctor, PA, NP, Nurse sub-groups
 
-//NOTE::This section is commented off for time being to continue test runs on other sections for now.
-
-/*const {Model, DataTypes} = require('sequelize');
-const bcrypt = require('bcrypt');
+const {Model, DataTypes} = require('sequelize');
 const sequelize = require('../config/connection');
-const { model } = require('../config/connection');
 
-class User extends Model {
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password);
-    }
+class Provider extends Model {
+   // checkPassword(loginPw) {
+        //return bcrypt.compareSync(loginPw, this.password);
+    //}
 }
 
-User.init(
+Provider.init(
     {
-        username: {
+        Providername: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -29,17 +25,17 @@ User.init(
     },
     {
         hooks: {
-            beforeCreate: async(newUserData) => {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10);
-                return newUserData;
+            beforeCreate: async(newProviderData) => {
+                newProviderData.password = await bcrypt.hash(newProviderData.password, 10);
+                return newProviderData;
             },
         },
         sequelize,
         timestamps: false,
         freezeTablename: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'Provider',
     }
 );
 
-model.exports = User;*/
+model.exports = Provider;
