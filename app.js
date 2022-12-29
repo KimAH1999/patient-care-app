@@ -16,7 +16,7 @@ const sess = {
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
-    }),
+    })
 };
 //handlebars
 //app.use(); mounts middleware for all routes of the app (or those matching the routes specified if you use app.use('/ANYROUTESHERE', yourMiddleware());
