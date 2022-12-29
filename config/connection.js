@@ -1,14 +1,17 @@
-const Sequelize = require('sequelize');
+require("dotenv").config();
+const express = require("express")
+const app = express();
+let seq;
 
-require('dotenv').config();
+//express app configuration
 
-// create connection to our db
-const sequelize = process.env.JAWSDB_URL
-  ? new Sequelize(process.env.JAWSDB_URL)
-  : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
-      host: '127.0.0.1',
-      dialect: 'mysql',
-      port: 3306
-    });
-
-module.exports = sequelize;
+if (process.env.JAWSDB_URL) {
+    console.log("There is a JAWS DB URL")
+    seq = new Sequelize(process.env.JAWSDB_URL)
+}
+else {
+    seq = require("./models").sequelize
+}
+seq.sync().then(() => {
+  app.listen(PORT, () => console.log('server started on port ' + PORT));
+})
