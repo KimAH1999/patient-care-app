@@ -4,14 +4,20 @@
   "description": "We built this application as a team project. In the process of building this application, we learned a lot about working together and how to propertly plan for deadline. This project that we planned together from scratch has been very helpful.",
   "main": "app.js",
   "scripts": {
-    "test": "app"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "seed": "node seeds/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
-    "express-session": "^1.17.3"
+    "express-session": "^1.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.28.0"
   }
 }
