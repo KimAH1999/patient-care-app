@@ -18,13 +18,18 @@ const sess = {
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
-    })
+    }) 
 };
 //handlebars
 //app.use(); mounts middleware for all routes of the app (or those matching the routes specified if you use app.use('/ANYROUTESHERE', yourMiddleware());
 app.use(session(sess));
 
 const hbs = exphbs.create({ helpers });
+
+app.get('/favicon.ico', (req, res) => {
+  // Use actual relative path to your .ico file here
+  res.sendFile(path.resolve(__dirname, '../favicon.ico'));
+});
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
