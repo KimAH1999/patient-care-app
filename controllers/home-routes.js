@@ -1,71 +1,27 @@
 const router = require('express').Router();
-const { Provider, Patient } = require('../models');
-// Import the custom middleware
+const { Provider } = require('../models');
 const withAuth = require('../utils/auth');
-
-// GET all galleries for homepage
-router.get('/', async (req, res) => {
+//This instince home-routes is focused on Provider, but patient and user can still have their own login data
+router.get('/', withAuth, async (req, res) => {
   try {
-    const dbProviderData = await Provider.findAll({
-      include: [
-        {
-          model: Patient,
-          attributes: ['filename', 'description'],
-        },
-      ],
+    const providerData = await Provider.findAll({
+      attributes: { exclude: ['password'] },
+      order: [['name', 'ASC']],
     });
 
-    const Providers = dbProviderData.map((Provider) =>
-      Provider.get({ plain: true })
-    );
+    const providers = providerData.map((project) => project.get({ plain: true }));
 
     res.render('homepage', {
-      galleries,
-      loggedIn: req.session.loggedIn,
+      providers,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// GET one Provider
-// Use the custom middleware before allowing the user to access the Provider
-router.get('/Provider/:id', withAuth, async (req, res) => {
-  try {
-    const dbProviderData = await Provider.findByPk(req.params.id, {
-      include: [
-        {
-          model: Patient,
-          attributes: ['id','name','checkin_date','filename','description'],
-        },
-      ],
-    });
-
-    const Provider = dbProviderData.get({ plain: true });
-    res.render('Provider', { Provider, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
-
-// GET one Patient
-// Use the custom middleware before allowing the user to access the Patient
-router.get('/Patient/:id', withAuth, async (req, res) => {
-  try {
-    const dbPatientData = await Patient.findByPk(req.params.id);
-    const Patient = dbPatientData.get({ plain: true });
-
-    res.render('Patient', { Patient, loggedIn: req.session.loggedIn });
-  } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
 router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
