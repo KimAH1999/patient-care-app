@@ -1,5 +1,5 @@
 // baseline model, will have Doctor, PA, NP, Nurse sub-groups
-
+const bcrypt = require('bcrypt');
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
