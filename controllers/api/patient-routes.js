@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Patient } = require('../../models');
+
+
 //Patient login router
 router.post('/login', async (req, res) => {
     try {

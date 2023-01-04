@@ -3,14 +3,12 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
 const routes = require('./controllers/api');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers'); 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
-
+const PORT = process.env.PORT || 5000;
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
@@ -18,28 +16,16 @@ const sess = {
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
-    }) 
+    }),
 };
-//handlebars
-//app.use(); mounts middleware for all routes of the app (or those matching the routes specified if you use app.use('/ANYROUTESHERE', yourMiddleware());
+
 app.use(session(sess));
-
 const hbs = exphbs.create({ helpers });
-
-app.get('/favicon.ico', (req, res) => {
-  // Use actual relative path to your .ico file here
-  res.sendFile(path.resolve(__dirname, '../favicon.ico'));
-});
-
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(routes);
-
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('App listening at http://localhost:${PORT} 🚀'));
+  app.listen(PORT, () => console.log('App listening at http://localhost:'+ PORT));
 });
