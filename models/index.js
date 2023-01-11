@@ -6,7 +6,4 @@ Patient.belongsTo(Doctor, {
   onDelete: 'CASCADE'
 });
 
-module.exports = {
-  Doctor,
-  Patient
-};
+module.exports = { Doctor, Patient };
