@@ -4,7 +4,7 @@
 
 We built this application as a team project. In the process of building this application, we learned a lot about working together and how to propertly plan for deadline. This project that we planned together from scratch has been very helpful. 
 
-Link to deployed application: https://patient-care-app.herokuapp.com/login
+Link to deployed application: https://patient-careapp.herokuapp.com/login
 
 ## Usage
 
