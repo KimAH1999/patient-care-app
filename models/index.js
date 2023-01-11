@@ -1,12 +1,12 @@
+const Doctor = require('./Doctor');
 const Patient = require('./Patient');
-const Provider = require('./Provider');
 
-Provider.hasMany(Patient, {
-    foreignKey: 'provider_id',
+Patient.belongsTo(Doctor, {
+  foreignKey: 'userId',
+  onDelete: 'CASCADE'
 });
 
-Patient.belongsTo(Provider, {
-    foreignKey: 'provider_id',
-});
-
-module.exports = { Provider, Patient };
+module.exports = {
+  Doctor,
+  Patient
+};

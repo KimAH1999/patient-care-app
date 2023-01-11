@@ -1,49 +1,20 @@
-const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
+const { Sequelize, Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/config');
 
-class Patient extends Model { }
+class Patient extends Model {}
 
 Patient.init(
   {
-    id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
-    },
-    patient_name: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-        validate: {
-          isEmail: true,
-        },
-    },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8],
-      },
-    },
+    name: DataTypes.STRING,
+    dob: DataTypes.STRING,
+    sex: DataTypes.STRING,
+    gender: DataTypes.STRING,
+    height: DataTypes.STRING,
+    weight: DataTypes.STRING,
+    treatment_plan: DataTypes.STRING,
   },
   {
-    hooks: {
-        beforeCreate: async (newPatientData) => {
-            newPatientData.password = await bcrypt.hash(newPatientData.password, 10);
-            return newPatientData;
-        },
-    },
-    sequelize,
-    timestamps: false,
-    freezeTablename: true,
-    underscored: true,
-    modelName: 'Patient',
+    sequelize
   }
 );
 

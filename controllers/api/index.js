@@ -1,11 +1,9 @@
-const router = require('express').Router(); 
-const userRoutes = require('./user-routes');
-const providerRoutes = require('./provider-routes');
+const router = require('express').Router();
+
+const doctorRoutes = require('./doctor-routes');
 const patientRoutes = require('./patient-routes');
 
-//router.use(); mounts middleware for the routes served by the specific router
-router.use('/patientUser', userRoutes);
-router.use('/provider', providerRoutes);
+router.use('/doctor', doctorRoutes);
 router.use('/patient', patientRoutes);
 
 module.exports = router;

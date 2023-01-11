@@ -1,0 +1,33 @@
+<div class="post card">
+  <div class="card-header">
+    <h2>Patient Chart</h2>
+  </div>
+  <form id="view-patient-form" class="card-body">
+    <input type="hidden" name="patient-id" value="{{post.id}}" />
+
+    <label class="form-label" for="patient-name">Patient Name</label>
+    <input type="text" name="patient-name" value="{{post.name}}" class="form-input" />
+
+    <label class="form-label" for="patient-dob">Patient Date of Birth</label>
+    <input type="text" name="patient-dob" value="{{post.dob}}" class="form-input" />
+
+    <label class="form-label" for="patient-sex">Patient Sex</label>
+    <input type="text" name="patient-sex" value="{{post.sex}}" class="form-input" />
+
+    <label class="form-label" for="patient-gender">Patient Gender</label>
+    <input type="text" name="patient-gender" value="{{post.gender}}" class="form-input" />
+
+    <label class="form-label" for="patient-height">Patient Height</label>
+    <input type="text" name="patient-height" value="{{post.height}}" class="form-input" />
+
+    <label class="form-label" for="patient-weight">Patient Weight</label>
+    <input type="text" name="patient-weight" value="{{post.weight}}" class="form-input" />
+
+    <label class="form-label" for="patient-treatment-plan">Patient Treatment Plan</label>
+    <textarea name="patient-treatment-plan" class="form-input">{{post.treatment_plan}}</textarea>
+
+    <button type="button" id="back-btn" class="btn">Go Back</button>
+  </form>
+</div>
+
+<script src="/js/patient.js"></script>
